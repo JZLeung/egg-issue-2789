@@ -5,6 +5,7 @@ module.exports = appInfo => {
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1531322285306_3583';
+  config.auth_cookie_name = 'egg-issue-demo';
 
   // add your config here
   config.middleware = [];

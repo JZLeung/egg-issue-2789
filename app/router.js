@@ -11,7 +11,12 @@ module.exports = app => {
     successRedirect: '/',
     failureRedirect: '/signin',
   });
-
+  // use egg-passport-local
   router.post('/login', localStrategy);
   router.get('/auth', middleware.auth(), controller.home.authIndex);
+
+  // without egg-passport-local
+  router.post('/login2', controller.home.authLogin);
+  router.get('/auth2', middleware.auth2(), controller.home.authIndex);
+
 };
